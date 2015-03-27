@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>SlimBox</title>
+
+    <link rel="stylesheet/less" type="text/css" href="styles.less">
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/less.js/2.3.1/less.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <!--Slimbox-->
+    <script src="js/slimbox2.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/slimbox2.css">
+    <script class="javascript">
+        $(function(){
+            var opac = $('img').css("opacity");
+            $('#gallery img').hover(function(){
+                $(this).stop().animate({opacity: 1}, 400);
+            }, function(){
+                $(this).stop().animate({opacity: opac}, 400);
+            });
+        });
+    </script>
+
+</head>
+<body>
+	<ul id="gallery">
+	<li><a rel="lightbox-gallery" title="Image-1" href="img/image-hd-1.jpg"><img src="img/image-1.jpg"></a></li>
+	<li><a rel="lightbox-gallery" title="Image-2" href="img/image-hd-2.jpg"><img src="img/image-2.jpg" ></a></li>
+	<li><a rel="lightbox-gallery" title="Image-3" href="img/image-hd-3.jpg"><img src="img/image-3.jpg" ></a></li>
+</ul>
+</body>
+</html>

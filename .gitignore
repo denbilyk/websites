@@ -1,0 +1,14 @@
+.idea/
+.project/
+.settings/
+target/
+*.DS_Store
+*.ipr
+*.iws
+*.iml
+*/build/
+build/
+.gradle
+gradle/
+gradlew.*
+gradlew
