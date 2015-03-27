@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery test</title>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+
+    <style>
+        ul {
+            list-style: none;
+            margin-top: 30px;
+        }
+
+        li {
+            float: left;
+        }
+
+        a {
+            font-family: arial,sans-serif;
+            font-size: 13px;
+            color: #EDEDED;
+            text-decoration: none;
+            text-transform: uppercase;
+            padding: 14px 30px;
+            margin: 3px;
+            display: block;
+            background: #101416;
+            opacity: 1;
+            position: relative;
+            background-image: -webkit-gradient(linear, left top, left bottom, from(#2E3438), to(#101416);
+            background-image: linear-gradient(top, #2E3438, #101416);
+            -moz-border-radius: 5px;
+            -webkit-border-radius: 5px;
+            border-radius: 5px;
+            -webkit-box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+
+        }
+    </style>
+
+    <script>
+        $(document).ready(function () {
+            var opac = $('a').css("opacity");
+            $('a').hover(function () {
+                $('a').not(this).stop().animate({opacity: "0.3"}, 200);
+            }, function () {
+                $('a').not(this).stop().animate({opacity: opac}, 200);
+            })
+
+        });
+    </script>
+
+</head>
+<body>
+<ul id="nav">
+    <li><a href="#">Main</a></li>
+    <li><a href="#">Docs</a></li>
+    <li><a href="#">Gallery</a></li>
+    <li><a href="#">Jobs</a></li>
+    <li><a href="#">About</a></li>
+</ul>
+</body>
+</html>
