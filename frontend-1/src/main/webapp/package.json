@@ -1,0 +1,6 @@
+{
+  "name": "frontend-1",
+  "version": "1.0-SNAPSHOT",
+  "description": "An example module to illustrate the usage of a package.json",
+  "author": "Denis Bilyk <den.bilyk@gmail.com>"
+}

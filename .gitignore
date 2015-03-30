@@ -12,3 +12,13 @@ build/
 gradle/
 gradlew.*
 gradlew
+node/
+npm*
+.*.swp
+._*
+.git
+.hg
+.lock-wscript
+.svn
+.wafpickle-*
+CVS
