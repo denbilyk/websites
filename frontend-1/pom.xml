@@ -21,12 +21,14 @@
                 <version>0.0.23</version>
 
                 <configuration>
-                    <workingDirectory>src/main/webapp</workingDirectory>
+                    <workingDirectory>src/main/webapp/lib</workingDirectory>
+                    <nodeVersion>v0.12.1</nodeVersion>
+                    <npmVersion>2.7.4</npmVersion>
                 </configuration>
 
                 <executions>
                     <execution>
-                        <id>install node and npm</id>
+                        <id>install_node_and_npm</id>
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
@@ -42,6 +44,7 @@
                             <goal>npm</goal>
                         </goals>
                         <!-- Optional configuration which provides for running any npm command -->
+
                         <configuration>
                             <arguments>install</arguments>
                         </configuration>
