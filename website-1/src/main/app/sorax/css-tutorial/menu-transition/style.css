@@ -1,0 +1,129 @@
+
+body {
+    background: url(http://subtlepatterns.com/patterns/concrete_seamless.png);
+    font: 1em 'Tahoma', 'Arial';
+    text-transform: uppercase;
+}
+
+.nav {
+    list-style: none;
+    padding: 0;
+    margin: 30px;
+    width: 50px;
+    opacity: .3;
+    -webkit-transition: opacity .2s easy-in-out;
+}
+
+.nav:hover {
+    opacity: 1;
+}
+
+.nav li {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+    -webkit-transition: width .3s ease-in-out, height .3s ease-in-out;
+}
+
+.nav li:hover {
+    width: 200px;
+    height: 175px;
+}
+
+.nav li a {
+    display: block;
+    background: #bbb;
+    width: 200px;
+    height: 40px;
+    line-height: 40px;
+    margin: 1px;
+    color: #fff;
+    text-decoration: none;
+    padding-left: 15px;
+    cursor: pointer;
+
+    transition: background .3s ease-in-out;
+    -webkit-transition: background .3s ease-in-out;
+}
+
+.nav li a:hover {
+    background: #2fc5ff;
+}
+
+.nav li a:first-child {
+    font-size: 1.1em;
+    height: 50px;
+    line-height: 50px;
+    position: relative;
+    text-indent: 36px;
+
+}
+
+.nav li a:first-child::before {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 32px;
+    width: 32px;
+    top: 9px;
+    left: 9px;
+}
+
+.main-menu a:first-child::before {
+    background: url(home.png) center no-repeat;
+}
+
+.settings a:first-child::before {
+    background: url(settings.png) center no-repeat;
+}
+
+.link a:first-child::before {
+    background: url(link.png) center no-repeat;
+}
+
+.search a:first-child::before {
+    background: url(search.png) center no-repeat;
+}
+
+.button {
+    display: inline-block;
+    margin: 20px;
+    width: 100px;
+    height: 100px;
+    background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);
+    cursor: pointer;
+    border-radius: 50%;
+    box-shadow: 0 3px 20px rgba(0, 0, 0, .25),
+    inset 0 2px 0 rgba(255, 255, 255, .6),
+    0 2px 0 rgba(0, 0, 0, .1),
+    inset 0 0 20px rgba(0, 0, 0, .1)
+
+}
+
+.button:hover {
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, .2),
+    0 2px 0 rgba(255, 255, 255, .4),
+    inset 0 2px 20px rgba(0, 0, 0, .1)
+
+}
+
+.button::after {
+    content: '';
+    width: 100px;
+    height: 100px;
+    display: block;
+    opacity: .7;
+}
+
+.btn-photo::after {
+    background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/MD-camera-photo_0.png) center no-repeat;
+}
+
+.btn-settings::after {
+    background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/settings.png) center no-repeat;
+}
+
+.btn-tag::after {
+    background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/tag.png) center no-repeat;
+}
+
