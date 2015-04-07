@@ -1,0 +1,55 @@
+*{
+    background:url(http://subtlepatterns.com/patterns/concrete_seamless.png);
+}
+
+.panel-box{
+    border: 1px solid #444;
+    display:block;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 2px 15px  rgba(0,0,0,.5);
+    padding:10px 20px;
+
+}
+
+.task-box {
+
+}
+
+input[type="checkbox"] {
+    display:none;
+
+}
+
+input[type="text"] {
+    display:inline-block;
+    outline: 0;
+    border: 2px solid #222;
+    border-radius:5px;
+    height: 15px;
+    width: 300px;
+    padding:5px 15px;
+    margin-left:25px;
+
+}
+
+label {
+    position:absolute;
+    top:17px;
+    left:25px;
+}
+
+#task-ch-1:checked + label {
+    background:url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox.png);
+    display:inline-block;
+    width: 32px;
+    height: 32px;
+}
+
+
+#task-ch-1 + label {
+    background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox-empty.png);
+    display:inline-block;
+    width: 32px;
+    height: 32px;
+}

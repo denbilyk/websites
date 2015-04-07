@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <meta charset="utf-8">
+    <title>Tasker</title>
+</head>
+<body>
+<div id="container">
+    <div class="panel-box">
+        <div class="task-box">
+            <input type="checkbox" name="task-ch" id="task-ch-1">
+            <label for="task-ch-1"></label>
+            <input type="text" id="task-text-1">
+        </div>
+    </div>
+</div>
+
+<script>
+
+    $('#task-ch-1').select(
+            function () {
+                $('#task-text-1').attr('disabled', 'disabled');
+            }
+    );
+
+</script>
+</body>
+</html>
