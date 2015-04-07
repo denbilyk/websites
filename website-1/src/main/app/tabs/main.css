@@ -1,58 +1,64 @@
-*{
-box-sizing: border-box;
+* {
+    box-sizing: border-box;
 }
 
-#container{
-margin-left: 20px; 
-display: inline-block;
-margin-top: 20px;
-position: relative;
+body {
+    background: url("http://subtlepatterns.com/patterns/footer_lodyas.png");
+    font-family: "PT Sans", sans-serif;
+    font-size: 1.1em;
+    color: #ccc;
+}
+
+.tab {
+    margin-left: 20px;
+    display: inline-block;
+    margin-top: 20px;
+    position: relative;
+}
+
+::selection {
+    background: #4EC6DE;
 }
 
 .tab > label {
-	width: 60px;
-	height: 30px;
-	text-align: center;
-	padding: 7px 15px;
-	border: 1px solid #111;
-}
-
-.tab>input[type="radio"] {
-display: none;
+    width: 60px;
+    height: 30px;
+    text-align: center;
+    padding: 10px 20px;
+    border: 1px solid #eee;
 
 }
 
-.content > div {
-	opacity: 0;
-	width: 300px;
-	height: 200px;
-	border: 1px solid #555;
-	position: absolute;
-	top: 0px;
-	left: 0;
-	z-index: 0;
+.tab > input[type="radio"] {
+    display: none;
 }
 
-::selection{
-background: #4EC6DE;
+.content {
+
 }
 
+.tabs > div {
+    opacity: 0;
+    width: 500px;
+    height: 250px;
+    overflow: hidden;
+    border: 1px solid #eee;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 0;
+}
+
+#tab-nav-1:checked ~ .tabs > div:nth-of-type(1),
+#tab-nav-2:checked ~ .tabs > div:nth-of-type(2),
+#tab-nav-3:checked ~ .tabs > div:nth-of-type(3) {
+    border: 2px solid #fff;
+    opacity: 1;
+    z-index: 1;
+}
 
 .tab > input:checked + label,
 label:hover {
-	background: #4EC6DE;
+    background: #4EC6DE;
 
 }
-
-//#checkbox1:checked ~ .content > div:nth-of-type(1),
-//#checkbox2:checked ~ .content > div:nth-of-type(2),
-//#checkbox3:checked ~ .content > div:nth-of-type(3)
-
-#checkbox1:checked {
-	border: 2px solid #000;
-	opacity: 1;
-	z-index:1;
-}
-
-
-
