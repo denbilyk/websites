@@ -1,55 +1,81 @@
-*{
-    background:url(http://subtlepatterns.com/patterns/concrete_seamless.png);
+* {
+    background: url(http://subtlepatterns.com/patterns/concrete_seamless.png);
 }
 
-.panel-box{
+.panel-box {
     border: 1px solid #444;
-    display:block;
+    display: block;
     width: 400px;
     height: 400px;
-    box-shadow: 0 2px 15px  rgba(0,0,0,.5);
-    padding:10px 20px;
-
-}
-
-.task-box {
-
+    box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
+    padding: 10px 20px;
+    position: relative;
 }
 
 input[type="checkbox"] {
-    display:none;
+    display: none;
 
 }
 
 input[type="text"] {
-    display:inline-block;
+    display: inline-block;
     outline: 0;
     border: 2px solid #222;
-    border-radius:5px;
+    border-radius: 5px;
     height: 15px;
     width: 300px;
-    padding:5px 15px;
-    margin-left:25px;
+    padding: 5px 15px;
+    margin-left: 25px;
+    font: 16px "PT Sans", sans-serif;
+    font-weight: 400;
+    opacity:.5;
 
+}
+
+
+input:disabled {
+    background: #555;
+    color: #ccc;
 }
 
 label {
-    position:absolute;
-    top:17px;
-    left:25px;
+    position: absolute;
+    top: 9px;
+    left: 14px;
 }
 
-#task-ch-1:checked + label {
-    background:url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox.png);
-    display:inline-block;
+input[type='checkbox']:checked + label {
+    background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox.png);
+    display: inline-block;
     width: 32px;
     height: 32px;
+    opacity: .5;
 }
 
-
-#task-ch-1 + label {
+input[type='checkbox'] + label {
     background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox-empty.png);
-    display:inline-block;
+    display: inline-block;
     width: 32px;
     height: 32px;
+    opacity: .5;
+}
+
+.controls {
+    position: absolute;
+    bottom: 10px;
+}
+
+.add::before {
+    content: '+';
+    border: 2px solid #000;
+    font: 20px Impact;
+    padding: 0px 6px;
+    opacity: .6;
+    border-radius: 5px;
+}
+
+.add:hover:before {
+    background: #555;
+    color: #eee;
+
 }

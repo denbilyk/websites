@@ -2,6 +2,7 @@
 <html>
 <head>
     <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+    <link rel="stylesheet" href="main.css"/>
     <meta charset="utf-8">
     <title>Tasker</title>
 </head>
@@ -13,14 +14,29 @@
             <label for="task-ch-1"></label>
             <input type="text" id="task-text-1">
         </div>
+
+        <div class="controls">
+            <div class="add" id="add_b"></div>
+        </div>
     </div>
 </div>
 
 <script>
 
-    $('#task-ch-1').select(
+    $('#task-ch-1').change(
             function () {
-                $('#task-text-1').attr('disabled', 'disabled');
+                if ($(this).is(':checked')) {
+                    $('#task-text-1').attr('disabled', 'disabled');
+                }
+                else {
+                    $('#task-text-1').removeAttr('disabled');
+                }
+            }
+    );
+
+    $('#add_b').click(
+            function(){
+                $('.task-box').clone();
             }
     );
 
