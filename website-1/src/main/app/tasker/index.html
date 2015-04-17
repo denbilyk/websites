@@ -10,9 +10,11 @@
 <div id="container">
     <div class="panel-box">
         <div class="task-box">
-            <input type="checkbox" name="task-ch" id="task-ch-1">
-            <label for="task-ch-1"></label>
-            <input type="text" id="task-text-1">
+            <label>
+                <input type="checkbox" name="task-ch">
+            </label>
+            <!--<label for="task-ch"></label>-->
+            <input type="text">
         </div>
 
         <div class="controls">
@@ -36,7 +38,7 @@
 
     $('#add_b').click(
             function(){
-                $('.task-box').clone();
+                $('.task-box:first').clone().insertAfter("div.task-box:last");
             }
     );
 
