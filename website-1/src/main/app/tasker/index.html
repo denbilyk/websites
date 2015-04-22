@@ -10,11 +10,11 @@
 <div id="container">
     <div class="panel-box">
         <div class="task-box">
-            <label>
-                <input type="checkbox" name="task-ch">
-            </label>
-            <!--<label for="task-ch"></label>-->
+            <input type="checkbox" name="task-ch">
+            <label> </label>
             <input type="text">
+
+            <div class="rem"></div>
         </div>
 
         <div class="controls">
@@ -24,23 +24,92 @@
 </div>
 
 <script>
+    $(document).ready(function () {
+                var taskbox = $('.task-box:first');
+                initBox(taskbox);
+            }
+    );
 
-    $('#task-ch-1').change(
-            function () {
+    var listeners = function (id) {
+        $('input[type="checkbox"]').each(function () {
+            $(this).change(function () {
                 if ($(this).is(':checked')) {
-                    $('#task-text-1').attr('disabled', 'disabled');
+                    $(this).nextAll(':lt(2)').attr('disabled', 'disabled');
                 }
                 else {
-                    $('#task-text-1').removeAttr('disabled');
+                    $(this).nextAll(':lt(2)').removeAttr('disabled');
                 }
-            }
-    );
+            });
+        });
 
-    $('#add_b').click(
-            function(){
-                $('.task-box:first').clone().insertAfter("div.task-box:last");
-            }
-    );
+        $('#' + id).keypress(function (e) {
+                    var key = e.which;
+                    if (key === 13) {
+                        if ($("input:last").is(":focus")) {
+                            add_row();
+                        }
+                        else {
+                            var boxes = $('input[type="text"]');
+                            var next = boxes.filter(":gt(" + boxes.index(this) + ")").first();
+                            next.focus();
+                        }
+                    }
+                }
+        );
+
+
+    };
+
+    var addRemListener = function(id){
+        $('#' + id).click(function(){
+           $(this).parents("div.task-box").remove();
+        });
+    };
+
+    function initBox(taskbox) {
+        taskbox.insertAfter("div.task-box:last");
+        var objCheckbox = taskbox.children().first();
+        var objLabel = objCheckbox.next();
+        var objInputText = objLabel.next();
+        var objRemBtn = objInputText.next();
+        var guidV = guid();
+        objInputText.val('');
+        objCheckbox.attr('id', guidV);
+        objCheckbox.removeAttr("checked");
+
+        objLabel.attr('for', guidV);
+
+        guidV = guid();
+        objRemBtn.attr('id', guidV);
+        addRemListener(guidV);
+
+        guidV = guid();
+        objInputText.attr('id', guidV);
+        objInputText.removeAttr("disabled");
+        objInputText.focus();
+        listeners(guidV);
+    }
+
+
+    var add_row = function () {
+        var taskbox = $('.task-box:first').clone();
+        initBox(taskbox);
+    };
+
+    $('#add_b').click(function () {
+        add_row();
+    });
+
+    function guid() {
+        function s4() {
+            return Math.floor((1 + Math.random()) * 0x10000)
+                    .toString(16)
+                    .substring(1);
+        }
+
+        return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
+                s4() + '-' + s4() + s4() + s4();
+    }
 
 </script>
 </body>

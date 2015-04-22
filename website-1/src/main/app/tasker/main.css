@@ -5,10 +5,15 @@
 .panel-box {
     border: 1px solid #444;
     display: block;
-    width: 400px;
+    width: 450px;
     height: 400px;
     box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
     padding: 10px 20px;
+    position: relative;
+
+}
+
+.task-box {
     position: relative;
 }
 
@@ -20,10 +25,11 @@ input[type="text"] {
     height: 15px;
     width: 300px;
     padding: 5px 15px;
-    margin-left: 25px;
+    margin: 2px;
     font: 16px "PT Sans", sans-serif;
     font-weight: 400;
     opacity:.5;
+    float: left;
 
 }
 
@@ -37,17 +43,15 @@ input:disabled {
 }
 
 label {
-    position: absolute;
-    top: 9px;
-    left: 14px;
     background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox-empty.png);
     display: inline-block;
     width: 32px;
     height: 32px;
     opacity: .5;
+    float: left;
 }
 
-label > input[type='checkbox']:checked {
+input[type='checkbox']:checked + label{
     background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox.png);
     display: inline-block;
     width: 32px;
@@ -55,13 +59,10 @@ label > input[type='checkbox']:checked {
     opacity: .5;
 }
 
-label > input[type='checkbox'] {
-
-}
 
 .controls {
     position: absolute;
-    bottom: 10px;
+    bottom: 20px;
 }
 
 .add::before {
@@ -78,3 +79,12 @@ label > input[type='checkbox'] {
     color: #eee;
 
 }
+
+.rem {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/delete.png);
+    opacity: .5;
+}
+
