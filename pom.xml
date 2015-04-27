@@ -11,6 +11,7 @@
     <modules>
         <module>website-1</module>
         <module>frontend-1</module>
+        <module>tasker</module>
     </modules>
     <packaging>pom</packaging>
 
