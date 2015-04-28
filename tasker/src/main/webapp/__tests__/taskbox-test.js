@@ -1,10 +1,10 @@
 // __tests__/taskbox-test.js
 
-jest.dontMock('../taskbox.jsx');
+jest.dontMock('../app/taskbox.jsx');
 describe('TaskBox', function() {
     it('changes the text after click', function() {
         var React = require('react/addons');
-        var CheckboxWithLabel = require('../taskbox.jsx');
+        var CheckboxWithLabel = require('../app/taskbox.jsx');
         var TestUtils = React.addons.TestUtils;
 
         // Render a checkbox with label in the document

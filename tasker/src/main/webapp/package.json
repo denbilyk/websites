@@ -4,12 +4,20 @@
   "description": "An example module to illustrate the usage of a package.json",
   "author": "Denis Bilyk <den.bilyk@gmail.com>",
   "devDependencies": {
+    "jest-cli": "^0.4.0",
     "jquery": "~2.1.3",
-    "react":"~0.13.1",
-    "showdown":"latest"
-
+    "react": "~0.13.1",
+    "react-tools": "*",
+    "showdown": "latest"
   },
+
+  "jest": {
+    "scriptPreprocessor": "<rootDir>/preprocessor.js",
+    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+  },
+
   "scripts": {
     "test": "jest"
+
   }
 }
