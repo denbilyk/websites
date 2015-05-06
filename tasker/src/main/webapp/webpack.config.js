@@ -28,6 +28,16 @@ module.exports = {
             {test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM"}
         ]
     },
+    plugins: [
+        new webpack.ProvidePlugin({
+            // Automtically detect jQuery and $ as free var in modules
+            // and inject the jquery library
+            // This is required by many jquery plugins
+            jQuery: "jquery",
+            $: "jquery"
+        })
+    ],
+
     externals: {
         //don't bundle the 'react' npm package with our bundle.js
         //but get it from a global 'React' variable
