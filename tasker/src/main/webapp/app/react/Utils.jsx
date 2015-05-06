@@ -1,6 +1,4 @@
-var app = app || {};
-
-app.Utils = {
+var Utils = {
 
     guid: function () {
 
@@ -13,5 +11,5 @@ app.Utils = {
         return s4() + s4() + '-' + s4() + '-' + s4() + '-' +
             s4() + '-' + s4() + s4() + s4();
     }
-
 };
+module.exports = Utils;

@@ -1,6 +1,4 @@
-app = app || {};
-
-app.TaskBox = React.createClass({
+var TaskBox = React.createClass({
     getInitialState: function () {
         return {
             complete: false
@@ -31,5 +29,4 @@ app.TaskBox = React.createClass({
         );
     }
 });
-
-
+module.exports = TaskBox;

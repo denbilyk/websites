@@ -15,6 +15,9 @@ gradlew
 node/
 npm*
 node_*/
+dist/
+build/
+etc/
 .*.swp
 ._*
 .git

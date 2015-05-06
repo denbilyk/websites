@@ -22,8 +22,8 @@
 
                 <configuration>
                     <workingDirectory>src/main/webapp</workingDirectory>
-                    <nodeVersion>v0.12.1</nodeVersion>
-                    <npmVersion>2.7.4</npmVersion>
+                    <nodeVersion>v0.10.37</nodeVersion>
+                    <npmVersion>2.7.1</npmVersion>
                 </configuration>
 
                 <executions>
@@ -32,10 +32,6 @@
                         <goals>
                             <goal>install-node-and-npm</goal>
                         </goals>
-                        <configuration>
-                            <nodeVersion>v0.12.1</nodeVersion>
-                            <npmVersion>2.7.4</npmVersion>
-                        </configuration>
                     </execution>
 
                     <execution>
@@ -74,17 +70,6 @@
                         </configuration>
                     </execution>
 
-                    <execution>
-                        <id>javascript tests</id>
-                        <goals>
-                            <goal>karma</goal>
-                        </goals>
-
-                        <!-- optional: the default plase is "test". Some developers
-                        choose to run karma in the "integration-test" phase. -->
-                        <phase>test</phase>
-
-                    </execution>
                 </executions>
             </plugin>
         </plugins>

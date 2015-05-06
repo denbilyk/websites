@@ -9,7 +9,7 @@ describe('TaskBox', function() {
 
         // Render a checkbox with label in the document
         var checkbox = TestUtils.renderIntoDocument(
-            <TaskBox labelOn="On" labelOff="Off" />
+            <TaskBox />
         );
 
         // Verify that it's Off by default

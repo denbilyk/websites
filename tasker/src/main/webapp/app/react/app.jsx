@@ -1,6 +1,5 @@
-app = app || {};
-
-var TaskBox = app.TaskBox;
+var TaskBox = require('./TaskBox');
+var Utils = require('./Utils');
 var ControlsBox = React.createClass({
 
     render: function () {
@@ -17,7 +16,7 @@ var PanelBox = React.createClass({
     render: function () {
         return (
             <div className="panel-box">
-                <TaskBox id={app.Utils.guid()}/>
+                <TaskBox id={Utils.guid()}/>
                 <ControlsBox />
             </div>
         );
