@@ -1,4 +1,8 @@
-export default class ControlBox extends React.Component {
+import React from "react/addons";
+import Utils from './Utils.es6.jsx';
+import TaskBox from './TaskBox.es6.jsx';
+
+class ControlBox extends React.Component {
 
     render() {
         return (
@@ -8,3 +12,17 @@ export default class ControlBox extends React.Component {
         );
     }
 }
+
+class PanelBox extends React.Component {
+
+    render() {
+        let utils = new Utils();
+        return (
+            <div className="panel-box">
+                <TaskBox id={utils.id()}/>
+                <ControlBox />
+            </div>
+        );
+    }
+}
+export {PanelBox, ControlBox};

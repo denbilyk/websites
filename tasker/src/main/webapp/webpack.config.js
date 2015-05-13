@@ -9,9 +9,9 @@ module.exports = {
     context: path.join(__dirname, './app'),
 
     entry: {
-        app:'./react/app.jsx'
+        //app:'./react/app.jsx'
         //index: './js/index.es6.js',
-        //react_es6:'./react/es6/app.es6.jsx',
+        app:'./react/es6/app.es6.jsx'
        // coffee: './js/index_coff.coffee',
        // scss_style:'./styles/main.scss'
        // main:'./js/main.js',
@@ -37,12 +37,14 @@ module.exports = {
         loaders: [
             {test: /\.css$/, loader: "css!autoprefixer"},
             {test: /\.scss$/, loader: "css!sass"},
-            {test: /\.js$/, loader: "jsx"},
-            {test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
+            {test: /\.es6.jsx$/, loader: "babel"}
+            //{test: /\.js$/, loader: "jsx"},
+           // {test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
         ]
     },
     plugins: [
         //new ExtractTextPlugin('main.css'),
+        new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.ProvidePlugin({
             // Automtically detect jQuery and $ as free var in modules
             // and inject the jquery library
@@ -52,12 +54,4 @@ module.exports = {
         })
     ]
 
-    //externals: {
-    //    //don't bundle the 'react' npm package with our bundle.js
-    //    //but get it from a global 'React' variable
-    //    'react': 'React'
-    //},
-    //resolve: {
-    //    extensions: ['', '.js', '.jsx']
-    //}
 };

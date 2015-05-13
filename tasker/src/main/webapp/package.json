@@ -9,7 +9,7 @@
   "author": "Denis Bilyk <den.bilyk@gmail.com>",
   "dependencies": {
     "jquery": "~2.1.3",
-    "react": "~0.13.1",
+    "react": "~0.13.3",
     "flux": "^2.0.1"
   },
   "devDependencies": {
@@ -34,7 +34,7 @@
     "webpack": "~1.8",
     "webpack-dev-server": "~1.8",
     "jsx-loader": "~0.13.2",
-    "sass-loader":"*",
+    "sass-loader":"^0.4.2",
     "babel-loader":"*",
     "coffee-loader":"*",
     "css-loader":"*",

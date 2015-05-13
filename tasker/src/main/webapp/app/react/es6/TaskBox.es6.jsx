@@ -1,18 +1,17 @@
 /*
-* TaskBox Component
-* */
-let React = require('react');
+ * TaskBox Component
+ * */
+import React from "react/addons";
+
 export default class TaskBox extends React.Component {
-     getInitialState() {
-        return {
-            complete: false
-        };
+
+    constructor(props) {
+        super(props);
+        this.state = {complete: false};
     }
 
     handleChange() {
-        this.setState({
-            complete: !this.state.complete
-        });
+        this.setState({complete: !this.state.complete});
     }
 
 
@@ -24,7 +23,7 @@ export default class TaskBox extends React.Component {
     render() {
         return (
             <div className="task-box">
-                <input type="checkbox" id={this.props.id} onChange={this.handleChange}/>
+                <input type="checkbox" id={this.props.id} onChange={this.handleChange.bind(this)}/>
                 <label htmlFor={this.props.id}/>
                 <input type="text" disabled={this.state.complete} onKeyDown={this.handleKeyDown}/>
 
