@@ -1,0 +1,50 @@
+/*
+* TaskBox styles
+*
+*/
+
+.task-box {
+  position: relative;
+}
+
+input[type="text"] {
+  display: inline-block;
+  outline: 0;
+  border: 2px solid #222;
+  border-radius: 5px;
+  height: 30px;
+  width: 300px;
+  padding: 10px 15px;
+  margin: 2px;
+  font: 16px 'PT Sans', sans-serif;
+  font-weight: 400;
+  opacity:.5;
+  float: left;
+
+}
+
+input[type="checkbox"] {
+  display: none;
+}
+
+input:disabled {
+  background: #555;
+  color: #ccc;
+}
+
+label {
+  background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox-empty.png);
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  opacity: .5;
+  float: left;
+}
+
+input[type='checkbox']:checked + label{
+  background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/checkbox.png);
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  opacity: .5;
+}

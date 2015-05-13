@@ -15,6 +15,23 @@
 
     <build>
         <plugins>
+
+            <plugin>
+                <artifactId>maven-clean-plugin</artifactId>
+                <configuration>
+                    <filesets>
+                        <fileset>
+                            <directory>${project.basedir}/src/main/webapp/node_modules</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/src/main/webapp/etc</directory>
+                        </fileset>
+                        <fileset>
+                            <directory>${project.basedir}/src/main/webapp/dist</directory>
+                        </fileset>
+                    </filesets>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>com.github.eirslett</groupId>
                 <artifactId>frontend-maven-plugin</artifactId>

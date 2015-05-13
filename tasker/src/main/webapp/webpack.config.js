@@ -9,26 +9,40 @@ module.exports = {
     context: path.join(__dirname, './app'),
 
     entry: {
-        react: './react/app.jsx'
+        app:'./react/app.jsx'
+        //index: './js/index.es6.js',
+        //react_es6:'./react/es6/app.es6.jsx',
+       // coffee: './js/index_coff.coffee',
+       // scss_style:'./styles/main.scss'
+       // main:'./js/main.js',
+       // html:'./pages/index.html'
+
     },
 
     output: {
         path: path.join(__dirname, "dist"),
         publicPath: "dist/",
-        filename: "bundle.js",
+        filename: "[name].js",
         chunkFilename: "[chunkhash].js"
     },
     module: {
-        loaders: [
-            // required to write "require('./style.css')"
-            {test: /\.css$/, loader: "style-loader!css-loader"},
 
-            // required for react jsx
-            {test: /\.js$/, loader: "jsx-loader"},
-            {test: /\.jsx$/, loader: "jsx-loader?insertPragma=React.DOM"}
+        //{test: /\.es6.js$/, exclude: /node_modules/, loader: "babel-loader?stage=0"},
+        //  {test: /\.coffee$/, exclude: /node_modules/, loader: "coffee-loader"},
+        // {test: /\.(png|jpg|gif)$/, loader: "file-loader?name=img/img-[hash:6].[ext]"},
+        //  {test: /\.(png|jpg|gif)$/, loader: "url-loader?limit=5000&name=img/[hash:6]-[hash:4]-[hash:4].[ext]"},
+        //  {test: /\.html$/, loader: "html-loader" },
+        //{test: /\.es6.jsx$/, loader: "babel-loader?stage=0"}
+        // required for react jsx
+        loaders: [
+            {test: /\.css$/, loader: "css!autoprefixer"},
+            {test: /\.scss$/, loader: "css!sass"},
+            {test: /\.js$/, loader: "jsx"},
+            {test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
         ]
     },
     plugins: [
+        //new ExtractTextPlugin('main.css'),
         new webpack.ProvidePlugin({
             // Automtically detect jQuery and $ as free var in modules
             // and inject the jquery library
@@ -36,14 +50,14 @@ module.exports = {
             jQuery: "jquery",
             $: "jquery"
         })
-    ],
+    ]
 
-    externals: {
-        //don't bundle the 'react' npm package with our bundle.js
-        //but get it from a global 'React' variable
-        'react': 'React'
-    },
-    resolve: {
-        extensions: ['', '.js', '.jsx']
-    }
+    //externals: {
+    //    //don't bundle the 'react' npm package with our bundle.js
+    //    //but get it from a global 'React' variable
+    //    'react': 'React'
+    //},
+    //resolve: {
+    //    extensions: ['', '.js', '.jsx']
+    //}
 };

@@ -1,25 +1,27 @@
-var React = require("react/addons");
-
-var TaskBox = React.createClass({
-    getInitialState: function () {
+/*
+* TaskBox Component
+* */
+let React = require('react');
+export default class TaskBox extends React.Component {
+     getInitialState() {
         return {
             complete: false
         };
-    },
+    }
 
-    handleChange: function () {
+    handleChange() {
         this.setState({
             complete: !this.state.complete
         });
-    },
+    }
 
 
-    handleKeyDown: function (event) {
+    handleKeyDown(event) {
         console.log(event.which)
-    },
+    }
 
 
-    render: function () {
+    render() {
         return (
             <div className="task-box">
                 <input type="checkbox" id={this.props.id} onChange={this.handleChange}/>
@@ -30,5 +32,4 @@ var TaskBox = React.createClass({
             </div>
         );
     }
-});
-module.exports = TaskBox;
+}

@@ -1,5 +1,8 @@
-var TaskBox = require('./TaskBox');
-var Utils = require('./Utils');
+require("../styles/main.scss");
+var React = require("react/addons");
+var TaskBox = require('./TaskBox.jsx');
+var Utils = require('./Utils.jsx');
+
 var ControlsBox = React.createClass({
 
     render: function () {

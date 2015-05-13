@@ -1,9 +1,46 @@
 /*
 * Third Party
 */
-//@import "../../node_modules/normalize.css/normalize.css";
+@import "taskbox.scss";
 
-/*
-* Custom
-*/
-@import "main.css";
+* {
+  background: url(http://subtlepatterns.com/patterns/concrete_seamless.png);
+}
+
+.panel-box {
+  border: 1px solid #444;
+  display: block;
+  width: 400px;
+  height: 400px;
+  box-shadow: 0 2px 15px rgba(0, 0, 0, .5);
+  padding: 10px 20px;
+  position: relative;
+}
+
+.controls {
+  position: absolute;
+  bottom: 20px;
+}
+
+.add::before {
+  content: '+';
+  border: 2px solid #000;
+  font: 20px Impact;
+  padding: 0px 6px;
+  opacity: .6;
+  border-radius: 5px;
+}
+
+.add:hover:before {
+  background: #555;
+  color: #eee;
+
+}
+
+.rem {
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/delete.png);
+  opacity: .5;
+}
