@@ -4,7 +4,7 @@
 @import "taskbox.scss";
 
 * {
-  background: url(http://subtlepatterns.com/patterns/concrete_seamless.png);
+  background: url("../img/background.png");
 }
 
 .panel-box {
@@ -41,6 +41,6 @@
   display: inline-block;
   width: 32px;
   height: 32px;
-  background: url(http://www.defaulticon.com/sites/default/files/styles/icon-front-page-32x32-preview/public/field/image/delete.png);
+  background: url('../img/delete.png');
   opacity: .5;
 }

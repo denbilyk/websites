@@ -66,7 +66,7 @@ gulp.task("webpack-dev-server", function (callback) {
         }
     }).listen(9000, "localhost", function (err) {
             if (err) throw new gutil.PluginError("webpack-dev-server", err);
-            gutil.log("[webpack-dev-server]", "http://localhost:9000/webpack-dev-server/dist/index.html");
+            gutil.log("[webpack-dev-server]", "http://localhost:9000/webpack-dev-server/target");
         });
 });
 
@@ -116,25 +116,25 @@ gulp.task('fonts:build', function () {
         .pipe(gulp.dest(app.dist.fonts))
 });
 
-gulp.task('build', ['html:build', 'style:build']);
+gulp.task('build', ['html:build']);
 
-gulp.task('default', ['build', 'webpack:build-dev', 'webpack-dev-server']);
+gulp.task('default', ['clean', 'build', 'webpack:build-dev', 'webpack-dev-server']);
 
 
 var app = {
     dist: {
-        html: 'dist/',
-        js: 'dist/js/',
-        css: 'dist/css/',
-        img: 'dist/img/',
-        fonts: 'dist/fonts/'
+        html: 'target/',
+        js: 'target/js/',
+        css: 'target/css/',
+        img: 'target/img/',
+        fonts: 'target/fonts/'
     },
     src: {
-        html: 'app/pages/*.html',
-        js: 'app/js/main.js',
-        style: 'app/styles/main.scss',
-        img: 'app/img/**/*.*',
-        fonts: 'app/fonts/**/*.*'
+        html: 'src/main/webapp/app/pages/*.html',
+        js: 'src/main/webapp/app/js/main.js',
+        style: 'src/main/webapp/app/styles/main.scss',
+        img: 'src/main/webapp/app/img/**/*.*',
+        fonts: 'src/main/webapp/app/fonts/**/*.*'
     },
     watch: {
         html: 'app/**/*.html',
@@ -143,5 +143,5 @@ var app = {
         img: 'src/img/**/*.*',
         fonts: 'src/fonts/**/*.*'
     },
-    clean: './dist'
+    clean: './target'
 };

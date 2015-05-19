@@ -1,12 +1,13 @@
 var path = require("path");
 var webpack = require("webpack");
+var ExtractTextPlugin = require("extract-text-webpack-plugin");
 module.exports = {
     cache: true,
     useMemoryFs: true,
     progress: true,
     watchDelay: 200,
 
-    context: path.join(__dirname, './app'),
+    context: path.join(__dirname, './src/main/webapp/app'),
 
     entry: {
         //app:'./react/app.jsx'
@@ -20,8 +21,7 @@ module.exports = {
     },
 
     output: {
-        path: path.join(__dirname, "dist"),
-        publicPath: "dist/",
+        path: path.join(__dirname, "target"),
         filename: "[name].js",
         chunkFilename: "[chunkhash].js"
     },
@@ -35,15 +35,17 @@ module.exports = {
         //{test: /\.es6.jsx$/, loader: "babel-loader?stage=0"}
         // required for react jsx
         loaders: [
-            {test: /\.css$/, loader: "css!autoprefixer"},
-            {test: /\.scss$/, loader: "css!sass"},
+            //{test: /\.css$/, loader: "css!autoprefixer"},
+            {test: /\.html$/, loader: "html"},
+            {test: /\.(png|jpg|gif)$/, loader: "url?limit=5000&name=img/[hash:16].[ext]"},
+            {test: /\.scss$/, loader: "style!css!sass"},
             {test: /\.es6.jsx$/, loader: "babel"}
             //{test: /\.js$/, loader: "jsx"},
            // {test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
         ]
     },
     plugins: [
-        //new ExtractTextPlugin('main.css'),
+        new ExtractTextPlugin('main.css'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.ProvidePlugin({
             // Automtically detect jQuery and $ as free var in modules

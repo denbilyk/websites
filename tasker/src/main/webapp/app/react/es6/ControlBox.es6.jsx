@@ -13,7 +13,7 @@ class ControlBox extends React.Component {
     }
 }
 
-class PanelBox extends React.Component {
+export default class PanelBox extends React.Component {
 
     render() {
         let utils = new Utils();
@@ -25,4 +25,3 @@ class PanelBox extends React.Component {
         );
     }
 }
-export {PanelBox, ControlBox};
