@@ -13,6 +13,7 @@ module.exports = {
         //app:'./react/app.jsx'
         //index: './js/index.es6.js',
         app:'./react/es6/app.es6.jsx'
+        //app:'./react/app.jsx'
        // coffee: './js/index_coff.coffee',
        // scss_style:'./styles/main.scss'
        // main:'./js/main.js',
@@ -39,9 +40,9 @@ module.exports = {
             {test: /\.html$/, loader: "html"},
             {test: /\.(png|jpg|gif)$/, loader: "url?limit=5000&name=img/[hash:16].[ext]"},
             {test: /\.scss$/, loader: "style!css!sass"},
-            {test: /\.es6.jsx$/, loader: "babel"}
+            {test: /\.es6.jsx$/, loader: "babel"},
             //{test: /\.js$/, loader: "jsx"},
-           // {test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
+            //{test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
         ]
     },
     plugins: [

@@ -1,5 +1,13 @@
 import "../../styles/main.scss";
 import React from "react/addons";
-import PanelBox from './ControlBox.es6.jsx';
+import MicroEvent from 'microevent';
+import Utils from './Utils.es6.jsx';
+import PanelBox from './PanelBox.es6.jsx';
+import TaskActions from '../../model/es6/TaskActions.es6.jsx'
+import GlobalStore from '../../model/es6/GlobalStore.es6.jsx'
 
-React.render(<PanelBox />, document.getElementById('content'));
+MicroEvent.mixin(GlobalStore);
+var store = new GlobalStore();
+var ta = new TaskActions(store);
+let u = new Utils();
+React.render(<PanelBox ta={ta} st={store} u={u}/>, document.getElementById('content'));

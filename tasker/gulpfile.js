@@ -60,7 +60,7 @@ gulp.task("webpack-dev-server", function (callback) {
 
     // Start a webpack-dev-server
     new WebpackDevServer(webpack(myConfig), {
-        publicPath: "/" + myConfig.output.publicPath,
+        publicPath: "/target",
         stats: {
             colors: true
         }
@@ -118,7 +118,7 @@ gulp.task('fonts:build', function () {
 
 gulp.task('build', ['html:build']);
 
-gulp.task('default', ['clean', 'build', 'webpack:build-dev', 'webpack-dev-server']);
+gulp.task('default', ['build', 'webpack:build-dev', 'webpack-dev-server']);
 
 
 var app = {

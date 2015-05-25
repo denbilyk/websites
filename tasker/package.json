@@ -43,7 +43,8 @@
     "autoprefixer-loader":"*",
     "file-loader":"*",
     "url-loader":"*",
-    "html-loader":"*"
+    "html-loader":"*",
+    "microevent":"^1.0.0"
 
 
 
