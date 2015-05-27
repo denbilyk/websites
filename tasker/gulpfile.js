@@ -116,9 +116,9 @@ gulp.task('fonts:build', function () {
         .pipe(gulp.dest(app.dist.fonts))
 });
 
-gulp.task('build', ['html:build']);
+gulp.task('webpack', ['html:build', 'webpack:build-dev', 'webpack-dev-server']);
 
-gulp.task('default', ['build', 'webpack:build-dev', 'webpack-dev-server']);
+gulp.task('default', ['webpack']);
 
 
 var app = {

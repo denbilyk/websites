@@ -13,15 +13,32 @@ export default class TaskActions {
         console.log("in add new");
         AppDispatcher.dispatch({
             eventName: 'new-item',
-            newItem: {id: _id, value: _value}
+            newItem: {id: _id, value: _value, complete: false}
         });
     }
 
-    update(_id, _value) {
+    update(_id, _value, _complete) {
         console.log("in update");
         AppDispatcher.dispatch({
             eventName: 'update-item',
-            newItem: {id: _id, value: _value}
+            newItem: {id: _id, value: _value, complete:_complete}
+        });
+    }
+
+
+    updateComplete(_id, _complete) {
+        console.log("in updateComplete");
+        AppDispatcher.dispatch({
+            eventName: 'update-item',
+            newItem: {id: _id, complete:_complete}
+        });
+    }
+
+    remove(_id) {
+        console.log('remove ' + _id);
+        AppDispatcher.dispatch({
+            eventName: 'delete-item',
+            newItem: {id: _id, value: ''}
         });
     }
 
@@ -29,4 +46,9 @@ export default class TaskActions {
         console.log('Task Actions: get all');
         return this.constructor.store.getAll();
     }
+
+    size(){
+        return this.constructor.store.size();
+    }
+
 }

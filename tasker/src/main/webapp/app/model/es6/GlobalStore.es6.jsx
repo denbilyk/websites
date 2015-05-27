@@ -4,30 +4,47 @@ import MicroEvent from 'microevent';
 export default class GlobalStore {
 
     constructor() {
-        console.log('init store');
-        this.counter = 20;
-        this.store = new Array(0);
+        this.store = [];
         AppDispatcher.register((payload) => {
             switch (payload.eventName) {
                 case 'new-item':
-                    this.store.push(payload.newItem);
-                    console.log("store.push ");
-                    this.trigger('change');
+                    let flag = false;
+                    this.store.forEach((item) => {
+                        if (item.value.trim() === '') {
+                            flag = true;
+                        }
+                    });
+                    if (!flag) {
+                        this.store.push(payload.newItem);
+                        console.log("store.push ");
+                        this.trigger('change');
+                    }
                     break;
 
                 case 'update-item':
-                    let updateData = payload.newItem;
                     console.log("store.update " + payload.newItem);
-                    console.log(payload.newItem);
                     let _id = payload.newItem.id;
                     // replace to find
                     this.store.forEach((item) => {
                         if (item.id === _id) {
-                            item.value = payload.newItem.value;
+                            if (typeof payload.newItem.value != 'undefined') {
+                                item.value = payload.newItem.value;
+                            }
                             item.id = payload.newItem.id;
+                            item.complete = payload.newItem.complete;
+                        }
+
+                    });
+                    this.trigger('change');
+                    break;
+
+                case 'delete-item':
+                    let idx = -1;
+                    this.store.forEach((item) => {
+                        if (item.id === payload.newItem.id) {
+                            this.store.splice(this.store.indexOf(item), 1);
                         }
                     });
-                    console.log(this.store);
                     this.trigger('change');
                     break;
             }
@@ -38,6 +55,10 @@ export default class GlobalStore {
 
     getAll() {
         return this.store;
+    }
+
+    size() {
+        return this.store.length;
     }
 
 }

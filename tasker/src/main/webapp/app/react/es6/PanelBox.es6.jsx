@@ -9,7 +9,12 @@ class ControlBox extends React.Component {
 
     handleOnClick(event) {
         console.log("onClick");
-        this.props.ta.addNew(this.props.u.id(), '');
+        if (this.props.ta.size() != 10) {
+            this.props.ta.addNew(this.props.u.id(), '');
+        }
+        else {
+            alert("No more tasks")
+        }
     }
 
     render() {
@@ -45,7 +50,6 @@ export default class PanelBox extends React.Component {
     handleChange() {
         console.log('handle change');
         console.log(this.state.items);
-
         this.setState({items: this.getItems()});
 
     }
@@ -56,7 +60,13 @@ export default class PanelBox extends React.Component {
         console.log(items);
         return items.map(function (item) {
             return (
-                <TaskBox id={utils.id()} key={utils.guid()} item={item} ta={this.props.ta} u={this.props.u}/>
+                <TaskBox
+                    id={utils.id()}
+                    key={utils.guid()}
+                    item={item}
+                    ta={this.props.ta}
+                    u={this.props.u}
+                    />
             );
         }, this);
     }
