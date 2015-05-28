@@ -6,7 +6,6 @@ import GlobalStore from '../../model/es6/GlobalStore.es6.jsx'
 
 class ControlBox extends React.Component {
 
-
     handleOnClick(event) {
         console.log("onClick");
         if (this.props.ta.size() != 10) {

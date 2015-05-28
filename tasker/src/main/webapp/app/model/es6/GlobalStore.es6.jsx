@@ -9,7 +9,7 @@ export default class GlobalStore {
             switch (payload.eventName) {
                 case 'new-item':
                     let flag = false;
-                    this.store.forEach((item) => {
+                    this.store.forEach(item => {
                         if (item.value.trim() === '') {
                             flag = true;
                         }
@@ -40,7 +40,7 @@ export default class GlobalStore {
 
                 case 'delete-item':
                     let idx = -1;
-                    this.store.forEach((item) => {
+                    this.store.forEach(item => {
                         if (item.id === payload.newItem.id) {
                             this.store.splice(this.store.indexOf(item), 1);
                         }

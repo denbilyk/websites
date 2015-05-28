@@ -7,7 +7,7 @@ import TaskActions from '../../model/es6/TaskActions.es6.jsx'
 import GlobalStore from '../../model/es6/GlobalStore.es6.jsx'
 
 MicroEvent.mixin(GlobalStore);
-var store = new GlobalStore();
-var ta = new TaskActions(store);
-let u = new Utils();
+const store = new GlobalStore();
+const ta = new TaskActions(store);
+const u = new Utils();
 React.render(<PanelBox ta={ta} st={store} u={u}/>, document.getElementById('content'));

@@ -40,7 +40,7 @@ module.exports = {
             {test: /\.html$/, loader: "html"},
             {test: /\.(png|jpg|gif)$/, loader: "url?limit=5000&name=img/[hash:16].[ext]"},
             {test: /\.scss$/, loader: "style!css!sass"},
-            {test: /\.es6.jsx$/, loader: "babel"},
+            {test: /\.es6.jsx$/, loader: "babel"}
             //{test: /\.js$/, loader: "jsx"},
             //{test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
         ]
