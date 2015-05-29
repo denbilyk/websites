@@ -39,14 +39,14 @@ module.exports = {
             //{test: /\.css$/, loader: "css!autoprefixer"},
             {test: /\.html$/, loader: "html"},
             {test: /\.(png|jpg|gif)$/, loader: "url?limit=5000&name=img/[hash:16].[ext]"},
-            {test: /\.scss$/, loader: "style!css!sass"},
-            {test: /\.es6.jsx$/, loader: "babel"}
+            {test: /\.scss$/, loader: ExtractTextPlugin.extract('css?sourceMap!sass?sourceMap') },
+            {test: /\.es6.jsx$/, loader: "babel?stage=0"}
             //{test: /\.js$/, loader: "jsx"},
             //{test: /\.jsx$/, loader: "jsx?insertPragma=React.DOM"}
         ]
     },
     plugins: [
-        new ExtractTextPlugin('main.css'),
+        new ExtractTextPlugin('style.css'),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.ProvidePlugin({
             // Automtically detect jQuery and $ as free var in modules
