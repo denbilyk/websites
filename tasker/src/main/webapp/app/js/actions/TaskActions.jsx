@@ -1,5 +1,4 @@
-import AppDispatcher from './AppDispatcher.es6.jsx'
-import GlobalStore from './GlobalStore.es6.jsx'
+import AppDispatcher from "./AppDispatcher.jsx";
 
 export default class TaskActions {
 
@@ -12,7 +11,7 @@ export default class TaskActions {
     addNew(_id, _value) {
         console.log("in add new");
         AppDispatcher.dispatch({
-            eventName: 'new-item',
+            eventName: "new-item",
             newItem: {id: _id, value: _value, complete: false}
         });
     }
@@ -20,8 +19,8 @@ export default class TaskActions {
     update(_id, _value, _complete) {
         console.log("in update");
         AppDispatcher.dispatch({
-            eventName: 'update-item',
-            newItem: {id: _id, value: _value, complete:_complete}
+            eventName: "update-item",
+            newItem: {id: _id, value: _value, complete: _complete}
         });
     }
 
@@ -29,25 +28,25 @@ export default class TaskActions {
     updateComplete(_id, _complete) {
         console.log("in updateComplete");
         AppDispatcher.dispatch({
-            eventName: 'update-item',
-            newItem: {id: _id, complete:_complete}
+            eventName: "update-item",
+            newItem: {id: _id, complete: _complete}
         });
     }
 
     remove(_id) {
-        console.log('remove ' + _id);
+        console.log("remove " + _id);
         AppDispatcher.dispatch({
-            eventName: 'delete-item',
-            newItem: {id: _id, value: ''}
+            eventName: "delete-item",
+            newItem: {id: _id, value: ""}
         });
     }
 
     getAll() {
-        console.log('Task Actions: get all');
+        console.log("Task Actions: get all");
         return this.constructor.store.getAll();
     }
 
-    size(){
+    size() {
         return this.constructor.store.size();
     }
 

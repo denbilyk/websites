@@ -16,6 +16,7 @@
     "react-tools": "*",
     "showdown": "latest",
     "browser-sync": "^2.2.3",
+    "eslint-plugin-react": "^2.3.0",
     "gulp-util": "~3.0",
     "gulp": "^3.8.11",
     "gulp-autoprefixer": "^2.1.0",
@@ -26,32 +27,48 @@
     "gulp-sourcemaps": "^1.5.0",
     "gulp-uglify": "^1.1.0",
     "gulp-watch": "^4.1.1",
+    "gulp-eslint": "^0.12.0",
     "imagemin-pngquant": "^4.0.0",
     "rimraf": "^2.3.1",
     "gulp-load-plugins": "^0.9.0",
     "gulp-rename": "^1.2.0",
     "gulp-concat": "^2.5.2",
+    "gulp-replace": "^0.5.3",
+    "jest-cli": "^0.4.5",
     "webpack": "~1.8",
     "webpack-dev-server": "~1.8",
-    "extract-text-webpack-plugin":"^0.7.0",
+    "extract-text-webpack-plugin": "^0.7.0",
     "jsx-loader": "~0.13.2",
-    "sass-loader":"^0.4.2",
-    "style-loader":"^0.12.2",
-    "babel-loader":"*",
-    "coffee-loader":"*",
-    "css-loader":"*",
-    "autoprefixer-loader":"*",
-    "file-loader":"*",
-    "url-loader":"*",
-    "html-loader":"*",
-    "microevent":"^1.0.0"
+    "sass-loader": "^0.4.2",
+    "style-loader": "^0.12.2",
+    "babel-loader": "*",
+    "babel-eslint": "^3.1.5",
+    "css-loader": "*",
+    "autoprefixer-loader": "*",
+    "file-loader": "*",
+    "url-loader": "*",
+    "microevent": "^1.0.0",
+    "autoprefixer-core": "^5.2.0",
+    "csswring": "3.0.5",
+    "postcss-loader": "^0.4.4",
+    "harmonize": "^1.4.2",
+    "babel-jest": "^5.2.0",
 
-
+    "karma": "^0.12.35",
+    "karma-cli":"^0.0.4",
+    "karma-mocha":"^0.1.10",
+    "karma-webpack":"^1.5.1",
+    "karma-sourcemap-loader":"^0.3.5",
+    "karma-chrome-launcher":"^0.1.12",
+    "chai":"^2.3.0"
 
   },
+
   "jest": {
     "scriptPreprocessor": "<rootDir>/preprocessor.js",
-    "unmockedModulePathPatterns": ["<rootDir>/node_modules/react"]
+    "unmockedModulePathPatterns": [
+      "<rootDir>/node_modules/react"
+    ]
   },
   "scripts": {
     "test": "jest"

@@ -1,8 +1,4 @@
-/*
- * TaskBox Component
- * */
 import React from "react/addons";
-import TaskActions from '../../model/es6/TaskActions.es6.jsx'
 
 export default class TaskBox extends React.Component {
 
@@ -23,18 +19,18 @@ export default class TaskBox extends React.Component {
 
     handlerKeyDown(event) {
         if (event.keyCode === 13) {
-            let _value = event.target.value;
-            this.props.ta.update(this.state.payload.id, _value, this.state.payload.complete);
-            if (this.props.ta.size() != 10) {
-                this.props.ta.addNew(this.props.u.id(), '');
+            let newValue = event.target.value;
+            this.props.ta.update(this.state.payload.id, newValue, this.state.payload.complete);
+            if (this.props.ta.size() !== 10) {
+                this.props.ta.addNew(this.props.u.id(), "");
             } else {
-                alert("No more tasks")
+                alert("No more tasks");
             }
         }
 
     }
 
-    handleRemove(event) {
+    handleRemove() {
         this.props.ta.remove(this.state.payload.id);
     }
 
@@ -54,7 +50,7 @@ export default class TaskBox extends React.Component {
                        defaultValue={this.state.payload.value}
                        id={this.state.payload.id}
                        onKeyDown={this.handlerKeyDown.bind(this)}
-                       ref='textInp'/>
+                       ref="textInp"/>
 
                 <div className="rem"
                      onClick={this.handleRemove.bind(this)}

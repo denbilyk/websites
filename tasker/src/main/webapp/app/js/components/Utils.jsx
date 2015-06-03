@@ -7,11 +7,11 @@ export default class Utils {
     }
 
     guid() {
-        return this.s4() + this.s4() + '-' + this.s4() + '-' + this.s4() + '-' +
-            this.s4() + '-' + this.s4() + this.s4() + this.s4();
+        return this.s4() + this.s4() + "-" + this.s4() + "-" + this.s4() + "-" +
+            this.s4() + "-" + this.s4() + this.s4() + this.s4();
     }
 
     id() {
-        return this.s4() + '-' + this.s4();
+        return this.s4() + "-" + this.s4();
     }
 }

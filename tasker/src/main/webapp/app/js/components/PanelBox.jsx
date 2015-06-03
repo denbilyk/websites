@@ -1,18 +1,15 @@
 import React from "react/addons";
-import MicroEvent from 'microevent';
-import TaskBox from './TaskBox.es6.jsx';
-import TaskActions from '../../model/es6/TaskActions.es6.jsx'
-import GlobalStore from '../../model/es6/GlobalStore.es6.jsx'
+import TaskBox from "./TaskBox.jsx";
 
 class ControlBox extends React.Component {
 
-    handleOnClick(event) {
+    handleOnClick() {
         console.log("onClick");
-        if (this.props.ta.size() != 10) {
-            this.props.ta.addNew(this.props.u.id(), '');
+        if (this.props.ta.size() !== 10) {
+            this.props.ta.addNew(this.props.u.id(), "");
         }
         else {
-            alert("No more tasks")
+            alert("No more tasks");
         }
     }
 
@@ -30,24 +27,24 @@ export default class PanelBox extends React.Component {
     constructor(props) {
         super(props);
         this.store = this.props.st;
-        this.state = {items: ''};
-        console.log('panel box constructor');
+        this.state = {items: ""};
+        console.log("panel box constructor");
 
     }
 
     componentDidMount() {
-        console.log('component did mount');
-        this.store.bind('change', this.handleChange.bind(this));
+        console.log("component did mount");
+        this.store.bind("change", this.handleChange.bind(this));
         this.setState({items: this.getItems()});
     }
 
     componentWillUnmount() {
-        console.log('unmount');
-        this.store.unbind('change', this.handleChange.bind(this));
+        console.log("unmount");
+        this.store.unbind("change", this.handleChange.bind(this));
     }
 
     handleChange() {
-        console.log('handle change');
+        console.log("handle change");
         console.log(this.state.items);
         this.setState({items: this.getItems()});
 

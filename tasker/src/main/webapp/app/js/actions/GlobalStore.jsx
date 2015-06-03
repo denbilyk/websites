@@ -1,33 +1,31 @@
-import AppDispatcher from './AppDispatcher.es6.jsx'
-import MicroEvent from 'microevent';
+import AppDispatcher from "./AppDispatcher.jsx";
 
 export default class GlobalStore {
-
     constructor() {
         this.store = [];
-        AppDispatcher.register((payload) => {
+        AppDispatcher.register(payload => {
             switch (payload.eventName) {
-                case 'new-item':
+                case "new-item":
                     let flag = false;
                     this.store.forEach(item => {
-                        if (item.value.trim() === '') {
+                        if (item.value.trim() === "") {
                             flag = true;
                         }
                     });
                     if (!flag) {
                         this.store.push(payload.newItem);
                         console.log("store.push ");
-                        this.trigger('change');
+                        this.trigger("change");
                     }
                     break;
 
-                case 'update-item':
+                case "update-item":
                     console.log("store.update " + payload.newItem);
-                    let _id = payload.newItem.id;
+                    let newId = payload.newItem.id;
                     // replace to find
                     this.store.forEach((item) => {
-                        if (item.id === _id) {
-                            if (typeof payload.newItem.value != 'undefined') {
+                        if (item.id === newId) {
+                            if (typeof payload.newItem.value !== "undefined") {
                                 item.value = payload.newItem.value;
                             }
                             item.id = payload.newItem.id;
@@ -35,17 +33,17 @@ export default class GlobalStore {
                         }
 
                     });
-                    this.trigger('change');
+                    this.trigger("change");
                     break;
 
-                case 'delete-item':
+                case "delete-item":
                     let idx = -1;
                     this.store.forEach(item => {
                         if (item.id === payload.newItem.id) {
                             this.store.splice(this.store.indexOf(item), 1);
                         }
                     });
-                    this.trigger('change');
+                    this.trigger("change");
                     break;
             }
         });
